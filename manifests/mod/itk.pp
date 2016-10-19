@@ -7,6 +7,7 @@ class apache::mod::itk (
   $maxrequestsperchild = '4000',
   $apache_version      = $::apache::apache_version,
 ) {
+  include ::apache
   if defined(Class['apache::mod::event']) {
     fail('May not include both apache::mod::itk and apache::mod::event on the same node')
   }

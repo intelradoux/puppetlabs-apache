@@ -64,6 +64,7 @@ class apache::mod::worker (
   $listenbacklog       = '511',
   $apache_version      = $::apache::apache_version,
 ) {
+  include ::apache
   if defined(Class['apache::mod::event']) {
     fail('May not include both apache::mod::worker and apache::mod::event on the same node')
   }

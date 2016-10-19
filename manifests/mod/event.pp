@@ -12,6 +12,7 @@ class apache::mod::event (
   $threadlimit            = '64',
   $listenbacklog          = '511',
 ) {
+  include ::apache
   if defined(Class['apache::mod::itk']) {
     fail('May not include both apache::mod::event and apache::mod::itk on the same node')
   }

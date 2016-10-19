@@ -5,6 +5,7 @@ class apache::mod::userdir (
   $apache_version = $::apache::apache_version,
   $options = [ 'MultiViews', 'Indexes', 'SymLinksIfOwnerMatch', 'IncludesNoExec' ],
 ) {
+  include ::apache
   ::apache::mod { 'userdir': }
 
   # Template uses $home, $dir, $disable_root, $apache_version
